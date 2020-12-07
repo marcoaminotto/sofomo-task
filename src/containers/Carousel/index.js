@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import ArrowButton from '../../components/ArrowButton';
 import Filmtrip from '../../components/Filmtrip';
@@ -9,6 +9,24 @@ const Carousel = () => {
   const [translate, setTranslate] = useState(0);
   const [transition, setTransition] = useState(0.45);
   const [activeImage, setActiveImage] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(4);
+
+  const autoPlayRef = useRef();
+
+  useEffect(() => {
+    autoPlayRef.current = nextImage;
+  });
+
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current();
+    };
+
+    if (autoPlay !== null) {
+      const interval = setInterval(play, autoPlay * 1000);
+      return () => clearInterval(interval);
+    }
+  }, [autoPlay]);
 
   const getWindowWidth = () => {
     return window.innerWidth;
@@ -50,7 +68,12 @@ const Carousel = () => {
 
   return (
     <div id="carousel">
-      <div id="slider" style={imagesTransition}>
+      <div
+        id="slider"
+        onMouseEnter={() => setAutoPlay(null)}
+        onMouseLeave={() => setAutoPlay(2)}
+        style={imagesTransition}
+      >
         {imagesList.map((index) => {
           const imagePath = `/images/image${index}.jpg`;
           return <Image key={index} src={imagePath} />;
