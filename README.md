@@ -1,6 +1,5 @@
-<p align="center">
-  <h1>FRONT-END ASSESSMENT: Carousel</h1>
-</p>
+
+  <h1 align="center">FRONT-END ASSESSMENT: Carousel</h1>
 
 <p align="center">	
   <a href="https://www.linkedin.com/in/marco-echevestre/">
