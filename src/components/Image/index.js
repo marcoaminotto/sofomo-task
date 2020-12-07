@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 import Advertise from '../Advertise';
 
@@ -11,4 +11,4 @@ const Image = ({src}) => {
   );
 };
 
-export default Image;
+export default memo(Image);
