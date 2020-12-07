@@ -42,4 +42,54 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 40%;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform ease-in 0.1s;
+  transition: -webkit-transform ease-in 0.1s;
+  transition: transform ease-in 0.1s;
+  transition: transform ease-in 0.1s, -webkit-transform ease-in 0.1s;
+}
+
+.button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.button img:focus {
+  outline: 0;
+}
+
+.right-direction {
+  right: 25px;
+}
+
+.left-direction {
+  left: 25px;
+}
+
+.img-right {
+  -webkit-transform: translateX(2px);
+          transform: translateX(2px);
+}
+
+.img-left {
+  -webkit-transform: translateX(-2px);
+          transform: translateX(-2px);
+}
 /*# sourceMappingURL=index.css.map */
