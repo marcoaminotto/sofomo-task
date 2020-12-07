@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ArrowButton from '../../components/ArrowButton';
+import Filmtrip from '../../components/Filmtrip';
 import Image from '../../components/Image';
 
 const Carousel = () => {
@@ -41,6 +42,12 @@ const Carousel = () => {
     setTranslate((activeImage + 1) * getWindowWidth());
   };
 
+  const handleClickThumbnail = (selectedImg) => {
+    const imgIndex = (selectedImg - 1) * -1;
+    setActiveImage(imgIndex);
+    setTranslate(imgIndex * getWindowWidth());
+  };
+
   return (
     <div id="carousel">
       <div id="slider" style={imagesTransition}>
@@ -51,8 +58,11 @@ const Carousel = () => {
       </div>
       <ArrowButton direction="left" handleClick={prevImage} />
       <ArrowButton direction="right" handleClick={nextImage} />
-      {/*
-      <Filmtrip />*/}
+      <Filmtrip
+        images={imagesList}
+        activeImage={activeImage}
+        handleClick={handleClickThumbnail}
+      />
     </div>
   );
 };
