@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ArrowButton from '../../components/ArrowButton';
+import Filmtrip from '../../components/Filmtrip';
 import Image from '../../components/Image';
 
 const Carousel = () => {
@@ -51,8 +52,9 @@ const Carousel = () => {
       </div>
       <ArrowButton direction="left" handleClick={prevImage} />
       <ArrowButton direction="right" handleClick={nextImage} />
-      {/*
-      <Filmtrip />*/}
+      <Filmtrip
+        images={imagesList}
+      />
     </div>
   );
 };
