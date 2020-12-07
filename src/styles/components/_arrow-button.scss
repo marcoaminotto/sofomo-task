@@ -1,0 +1,36 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform ease-in 0.1s;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img:focus {
+    outline: 0;
+  }
+}
+
+.right-direction {
+  right: 25px;
+}
+
+.left-direction {
+  left: 25px;
+}
+
+.img-right {
+  transform: translateX(2px);
+}
+
+.img-left {
+  transform: translateX(-2px);
+}
