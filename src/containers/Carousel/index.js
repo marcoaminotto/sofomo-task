@@ -42,6 +42,12 @@ const Carousel = () => {
     setTranslate((activeImage + 1) * getWindowWidth());
   };
 
+  const handleClickThumbnail = (selectedImg) => {
+    const imgIndex = (selectedImg - 1) * -1;
+    setActiveImage(imgIndex);
+    setTranslate(imgIndex * getWindowWidth());
+  };
+
   return (
     <div id="carousel">
       <div id="slider" style={imagesTransition}>
@@ -54,6 +60,8 @@ const Carousel = () => {
       <ArrowButton direction="right" handleClick={nextImage} />
       <Filmtrip
         images={imagesList}
+        activeImage={activeImage}
+        handleClick={handleClickThumbnail}
       />
     </div>
   );

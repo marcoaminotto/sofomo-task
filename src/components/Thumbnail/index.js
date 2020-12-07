@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Thumbnail = ({ path }) => {
+const Thumbnail = ({path, active, handleClick, index}) => {
   return (
-    <div className="thumbnail">
-      <img src={path} alt="Thumbnail" />
+    <div className="thumbnail" onClick={() => handleClick(index)}>
+      <img className={active ? 'active' : undefined} src={path} alt="Thumbnail"/>
     </div>
   );
 };
